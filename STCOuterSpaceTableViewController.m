@@ -6,6 +6,7 @@
 #import "AstronomicalData.h"
 #import "STCSpaceObject.h"
 #import "STCSpaceImageViewController.h"
+#import "STCSpaceDataViewController.h"
 
 @interface STCOuterSpaceTableViewController ()
 
@@ -57,6 +58,15 @@
             STCSpaceObject *selectedObject = self.planets[path.row];
             nextViewController.spaceObject = selectedObject;
         }
+        if ([sender isKindOfClass:[NSIndexPath class]])
+        {
+            if ([segue.destinationViewController isKindOfClass:[STCSpaceDataViewController class]]) {
+                STCSpaceDataViewController *targetViewController = segue.destinationViewController;
+                NSIndexPath *path = sender;
+                STCSpaceObject *selectedObject = self.planets[path.row];
+                targetViewController.spaceObject = selectedObject;
+            }
+        }
     }
 }
 
@@ -101,6 +111,16 @@
     
     return cell;
 }
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"push to space data" sender:indexPath];
+}
+
+
+
 
 
 /*

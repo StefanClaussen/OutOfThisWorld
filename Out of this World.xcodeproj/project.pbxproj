@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81F22C418F430A000DC59AC /* STCSpaceDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81F22C318F430A000DC59AC /* STCSpaceDataViewController.m */; };
 		F8453D0418EC1EE700F78AAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8453D0318EC1EE700F78AAF /* Foundation.framework */; };
 		F8453D0618EC1EE700F78AAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8453D0518EC1EE700F78AAF /* CoreGraphics.framework */; };
 		F8453D0818EC1EE700F78AAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8453D0718EC1EE700F78AAF /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F81F22C218F430A000DC59AC /* STCSpaceDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCSpaceDataViewController.h; sourceTree = "<group>"; };
+		F81F22C318F430A000DC59AC /* STCSpaceDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCSpaceDataViewController.m; sourceTree = "<group>"; };
 		F8453D0018EC1EE700F78AAF /* Out of this World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Out of this World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8453D0318EC1EE700F78AAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8453D0518EC1EE700F78AAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,6 +156,8 @@
 				F8453D1218EC1EE700F78AAF /* STCAppDelegate.h */,
 				F8453D1318EC1EE700F78AAF /* STCAppDelegate.m */,
 				F8453D1518EC1EE700F78AAF /* Main.storyboard */,
+				F81F22C218F430A000DC59AC /* STCSpaceDataViewController.h */,
+				F81F22C318F430A000DC59AC /* STCSpaceDataViewController.m */,
 				F86124DC18F2E377008344C7 /* STCSpaceImageViewController.h */,
 				F86124DD18F2E377008344C7 /* STCSpaceImageViewController.m */,
 				F8453D3818EC1FD900F78AAF /* STCOuterSpaceTableViewController.h */,
@@ -331,6 +336,7 @@
 			files = (
 				F86124DE18F2E377008344C7 /* STCSpaceImageViewController.m in Sources */,
 				F8453D1018EC1EE700F78AAF /* main.m in Sources */,
+				F81F22C418F430A000DC59AC /* STCSpaceDataViewController.m in Sources */,
 				F861248A18F2A193008344C7 /* STCSpaceObject.m in Sources */,
 				F8453D1418EC1EE700F78AAF /* STCAppDelegate.m in Sources */,
 				F8453D3A18EC1FD900F78AAF /* STCOuterSpaceTableViewController.m in Sources */,
