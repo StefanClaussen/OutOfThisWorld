@@ -5,6 +5,7 @@
 #import "STCOuterSpaceTableViewController.h"
 #import "AstronomicalData.h"
 #import "STCSpaceObject.h"
+#import "STCSpaceImageViewController.h"
 
 @interface STCOuterSpaceTableViewController ()
 
@@ -43,6 +44,20 @@
     NSLog(@"%@", shortNumber);
     NSNumber *shortFloatNumber = @42.56;
     NSLog(@"%@", shortFloatNumber);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]])
+    {
+        if ([segue.destinationViewController isKindOfClass:[STCSpaceImageViewController class]])
+        {
+            STCSpaceImageViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            STCSpaceObject *selectedObject = self.planets[path.row];
+            nextViewController.spaceObject = selectedObject;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

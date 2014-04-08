@@ -108,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F81F227D18F40AD300DC59AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F861248818F2A193008344C7 /* STCSpaceObject.h */,
+				F861248918F2A193008344C7 /* STCSpaceObject.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F8453CF718EC1EE700F78AAF = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +157,7 @@
 				F86124DD18F2E377008344C7 /* STCSpaceImageViewController.m */,
 				F8453D3818EC1FD900F78AAF /* STCOuterSpaceTableViewController.h */,
 				F8453D3918EC1FD900F78AAF /* STCOuterSpaceTableViewController.m */,
-				F861248818F2A193008344C7 /* STCSpaceObject.h */,
-				F861248918F2A193008344C7 /* STCSpaceObject.m */,
+				F81F227D18F40AD300DC59AC /* Model */,
 				F8453D1B18EC1EE700F78AAF /* Images.xcassets */,
 				F8453D0A18EC1EE700F78AAF /* Supporting Files */,
 			);
