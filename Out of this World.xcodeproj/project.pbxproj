@@ -71,16 +71,16 @@
 		F8453D3918EC1FD900F78AAF /* STCOuterSpaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCOuterSpaceTableViewController.m; path = ../STCOuterSpaceTableViewController.m; sourceTree = "<group>"; };
 		F8453D3C18ED662B00F78AAF /* AstronomicalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstronomicalData.h; sourceTree = "<group>"; };
 		F8453D3D18ED662B00F78AAF /* AstronomicalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AstronomicalData.m; sourceTree = "<group>"; };
-		F861247418F2A149008344C7 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Earth.jpg; sourceTree = "<group>"; };
-		F861247518F2A149008344C7 /* EinsteinRing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EinsteinRing.jpg; sourceTree = "<group>"; };
-		F861247618F2A149008344C7 /* Jupiter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jupiter.jpg; sourceTree = "<group>"; };
-		F861247718F2A149008344C7 /* Mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mars.jpg; sourceTree = "<group>"; };
-		F861247818F2A149008344C7 /* Mercury.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mercury.jpg; sourceTree = "<group>"; };
-		F861247918F2A149008344C7 /* Neptune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neptune.jpg; sourceTree = "<group>"; };
-		F861247A18F2A149008344C7 /* Orion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Orion.jpg; sourceTree = "<group>"; };
-		F861247B18F2A149008344C7 /* Saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Saturn.jpg; sourceTree = "<group>"; };
-		F861247C18F2A149008344C7 /* Uranus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Uranus.jpg; sourceTree = "<group>"; };
-		F861247D18F2A149008344C7 /* Venus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Venus.jpg; sourceTree = "<group>"; };
+		F861247418F2A149008344C7 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Earth.jpg; path = "planet-images/Earth.jpg"; sourceTree = "<group>"; };
+		F861247518F2A149008344C7 /* EinsteinRing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = EinsteinRing.jpg; path = "planet-images/EinsteinRing.jpg"; sourceTree = "<group>"; };
+		F861247618F2A149008344C7 /* Jupiter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jupiter.jpg; path = "planet-images/Jupiter.jpg"; sourceTree = "<group>"; };
+		F861247718F2A149008344C7 /* Mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Mars.jpg; path = "planet-images/Mars.jpg"; sourceTree = "<group>"; };
+		F861247818F2A149008344C7 /* Mercury.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Mercury.jpg; path = "planet-images/Mercury.jpg"; sourceTree = "<group>"; };
+		F861247918F2A149008344C7 /* Neptune.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Neptune.jpg; path = "planet-images/Neptune.jpg"; sourceTree = "<group>"; };
+		F861247A18F2A149008344C7 /* Orion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Orion.jpg; path = "planet-images/Orion.jpg"; sourceTree = "<group>"; };
+		F861247B18F2A149008344C7 /* Saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Saturn.jpg; path = "planet-images/Saturn.jpg"; sourceTree = "<group>"; };
+		F861247C18F2A149008344C7 /* Uranus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Uranus.jpg; path = "planet-images/Uranus.jpg"; sourceTree = "<group>"; };
+		F861247D18F2A149008344C7 /* Venus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Venus.jpg; path = "planet-images/Venus.jpg"; sourceTree = "<group>"; };
 		F861248818F2A193008344C7 /* STCSpaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STCSpaceObject.h; path = "astronmical-data-model/STCSpaceObject.h"; sourceTree = "<group>"; };
 		F861248918F2A193008344C7 /* STCSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCSpaceObject.m; path = "astronmical-data-model/STCSpaceObject.m"; sourceTree = "<group>"; };
 		F86124DC18F2E377008344C7 /* STCSpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STCSpaceImageViewController.h; path = ../STCSpaceImageViewController.h; sourceTree = "<group>"; };
@@ -172,7 +172,16 @@
 		F8453D0A18EC1EE700F78AAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F861247318F2A149008344C7 /* planet-images */,
+				F861247418F2A149008344C7 /* Earth.jpg */,
+				F861247518F2A149008344C7 /* EinsteinRing.jpg */,
+				F861247618F2A149008344C7 /* Jupiter.jpg */,
+				F861247718F2A149008344C7 /* Mars.jpg */,
+				F861247818F2A149008344C7 /* Mercury.jpg */,
+				F861247918F2A149008344C7 /* Neptune.jpg */,
+				F861247A18F2A149008344C7 /* Orion.jpg */,
+				F861247B18F2A149008344C7 /* Saturn.jpg */,
+				F861247C18F2A149008344C7 /* Uranus.jpg */,
+				F861247D18F2A149008344C7 /* Venus.jpg */,
 				F8453D3B18ED662B00F78AAF /* astronmical-data-model */,
 				F8453D0B18EC1EE700F78AAF /* Out of this World-Info.plist */,
 				F8453D0C18EC1EE700F78AAF /* InfoPlist.strings */,
@@ -207,23 +216,6 @@
 				F8453D3D18ED662B00F78AAF /* AstronomicalData.m */,
 			);
 			path = "astronmical-data-model";
-			sourceTree = "<group>";
-		};
-		F861247318F2A149008344C7 /* planet-images */ = {
-			isa = PBXGroup;
-			children = (
-				F861247418F2A149008344C7 /* Earth.jpg */,
-				F861247518F2A149008344C7 /* EinsteinRing.jpg */,
-				F861247618F2A149008344C7 /* Jupiter.jpg */,
-				F861247718F2A149008344C7 /* Mars.jpg */,
-				F861247818F2A149008344C7 /* Mercury.jpg */,
-				F861247918F2A149008344C7 /* Neptune.jpg */,
-				F861247A18F2A149008344C7 /* Orion.jpg */,
-				F861247B18F2A149008344C7 /* Saturn.jpg */,
-				F861247C18F2A149008344C7 /* Uranus.jpg */,
-				F861247D18F2A149008344C7 /* Venus.jpg */,
-			);
-			path = "planet-images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

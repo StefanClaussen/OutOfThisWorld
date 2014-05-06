@@ -3,6 +3,7 @@
 //  Out of this World
 
 #import <UIKit/UIKit.h>
+#import "STCSpaceObject.h"
 
 @interface STCOuterSpaceTableViewController : UITableViewController
 
