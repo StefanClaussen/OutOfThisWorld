@@ -35,6 +35,7 @@
 		F861248718F2A149008344C7 /* Venus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F861247D18F2A149008344C7 /* Venus.jpg */; };
 		F861248A18F2A193008344C7 /* STCSpaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F861248918F2A193008344C7 /* STCSpaceObject.m */; };
 		F86124DE18F2E377008344C7 /* STCSpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F86124DD18F2E377008344C7 /* STCSpaceImageViewController.m */; };
+		F8DE3B70191916AE00B61E49 /* STCAddSpaceObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DE3B6F191916AE00B61E49 /* STCAddSpaceObjectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		F861248918F2A193008344C7 /* STCSpaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCSpaceObject.m; path = "astronmical-data-model/STCSpaceObject.m"; sourceTree = "<group>"; };
 		F86124DC18F2E377008344C7 /* STCSpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STCSpaceImageViewController.h; path = ../STCSpaceImageViewController.h; sourceTree = "<group>"; };
 		F86124DD18F2E377008344C7 /* STCSpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STCSpaceImageViewController.m; path = ../STCSpaceImageViewController.m; sourceTree = "<group>"; };
+		F8DE3B6E191916AE00B61E49 /* STCAddSpaceObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCAddSpaceObjectViewController.h; sourceTree = "<group>"; };
+		F8DE3B6F191916AE00B61E49 /* STCAddSpaceObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCAddSpaceObjectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				F8453D1218EC1EE700F78AAF /* STCAppDelegate.h */,
 				F8453D1318EC1EE700F78AAF /* STCAppDelegate.m */,
 				F8453D1518EC1EE700F78AAF /* Main.storyboard */,
+				F8DE3B6E191916AE00B61E49 /* STCAddSpaceObjectViewController.h */,
+				F8DE3B6F191916AE00B61E49 /* STCAddSpaceObjectViewController.m */,
 				F81F22C218F430A000DC59AC /* STCSpaceDataViewController.h */,
 				F81F22C318F430A000DC59AC /* STCSpaceDataViewController.m */,
 				F86124DC18F2E377008344C7 /* STCSpaceImageViewController.h */,
@@ -329,6 +334,7 @@
 				F86124DE18F2E377008344C7 /* STCSpaceImageViewController.m in Sources */,
 				F8453D1018EC1EE700F78AAF /* main.m in Sources */,
 				F81F22C418F430A000DC59AC /* STCSpaceDataViewController.m in Sources */,
+				F8DE3B70191916AE00B61E49 /* STCAddSpaceObjectViewController.m in Sources */,
 				F861248A18F2A193008344C7 /* STCSpaceObject.m in Sources */,
 				F8453D1418EC1EE700F78AAF /* STCAppDelegate.m in Sources */,
 				F8453D3A18EC1FD900F78AAF /* STCOuterSpaceTableViewController.m in Sources */,
