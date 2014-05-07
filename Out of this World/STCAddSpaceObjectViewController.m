@@ -65,6 +65,8 @@
     addedSpaceObject.temperature = [self.temperatureTextField.text floatValue];
     addedSpaceObject.numberOfMoons = [self.numberOfMoonsTextField.text intValue];
     addedSpaceObject.interestFact = self.interestingFactTextField.text;
+    //placeholder image, until implement add image functionality
+    addedSpaceObject.spaceImage = [UIImage imageNamed:@"EinsteinRing.jpg"];
     
     return addedSpaceObject;
 }

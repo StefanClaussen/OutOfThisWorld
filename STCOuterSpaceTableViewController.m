@@ -14,6 +14,24 @@
 
 @implementation STCOuterSpaceTableViewController
 
+# pragma mark - Lazy Instantiation of Properties
+
+- (NSMutableArray *)planets
+{
+    if (!_planets) {
+        _planets = [[NSMutableArray alloc]init];
+    }
+    return _planets;
+}
+
+- (NSMutableArray *)addedSpaceObjects
+{
+    if (!_addedSpaceObjects) {
+        _addedSpaceObjects = [[NSMutableArray alloc]init];
+    }
+    return _addedSpaceObjects;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,24 +45,12 @@
 {
     [super viewDidLoad];
     
-    self.planets = [[NSMutableArray alloc]init];
-    
     for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets])
     {
         NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
         STCSpaceObject *planet = [[STCSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
         [self.planets addObject:planet];
     }
-    
-    NSNumber *myNumber = [NSNumber numberWithInt:5];
-    NSLog(@"%@", myNumber);
-    NSNumber *floatNumber = [NSNumber numberWithFloat:3.14];
-    NSLog(@"%@", floatNumber);
-    
-    NSNumber *shortNumber = @4879;
-    NSLog(@"%@", shortNumber);
-    NSNumber *shortFloatNumber = @42.56;
-    NSLog(@"%@", shortFloatNumber);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -55,21 +61,40 @@
         {
             STCSpaceImageViewController *nextViewController = segue.destinationViewController;
             NSIndexPath *path = [self.tableView indexPathForCell:sender];
-            STCSpaceObject *selectedObject = self.planets[path.row];
-            nextViewController.spaceObject = selectedObject;
-        }
-        if ([sender isKindOfClass:[NSIndexPath class]])
-        {
-            if ([segue.destinationViewController isKindOfClass:[STCSpaceDataViewController class]]) {
-                STCSpaceDataViewController *targetViewController = segue.destinationViewController;
-                NSIndexPath *path = sender;
-                STCSpaceObject *selectedObject = self.planets[path.row];
-                targetViewController.spaceObject = selectedObject;
+            STCSpaceObject *selectedObject;
+            if (path.section == 0)
+            {
+                selectedObject = self.planets[path.row];
             }
+            else if (path.section == 1)
+            {
+                selectedObject = self.addedSpaceObjects[path.row];
+            }
+            nextViewController.spaceObject = selectedObject;
         }
     }
     
-    if ([segue.destinationViewController isKindOfClass:[STCAddSpaceObjectViewController class]]) {
+    if ([sender isKindOfClass:[NSIndexPath class]])
+    {
+        if ([segue.destinationViewController isKindOfClass:[STCSpaceDataViewController class]])
+        {
+            STCSpaceDataViewController *targetViewController = segue.destinationViewController;
+            NSIndexPath *path = sender;
+            STCSpaceObject *selectedObject;
+            if (path.section == 0)
+            {
+                selectedObject = self.planets[path.row];
+            }
+            else if (path.section == 1)
+            {
+                selectedObject = self.addedSpaceObjects[path.row];
+            }
+            targetViewController.spaceObject = selectedObject;
+        }
+    }
+    
+    if ([segue.destinationViewController isKindOfClass:[STCAddSpaceObjectViewController class]])
+    {
         STCAddSpaceObjectViewController *addSpaceObjectVC = segue.destinationViewController;
         addSpaceObjectVC.delegate = self;
     }
@@ -91,13 +116,12 @@
 
 - (void)addSpaceObject:(STCSpaceObject *)spaceObject
 {
-    if (!self.addedSpaceObjects) {
-        self.addedSpaceObjects = [[NSMutableArray alloc]init];
-    }
     [self.addedSpaceObjects addObject:spaceObject];
     
     NSLog(@"addSpaceObject");
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -133,6 +157,10 @@
     // Configure the cell...
     if (indexPath.section == 1) {
 //        Use new Space object to customise our cell
+        STCSpaceObject *planet = [self.addedSpaceObjects objectAtIndex:indexPath.row];
+        cell.textLabel.text = planet.name;
+        cell.detailTextLabel.text = planet.nickname;
+        cell.imageView.image = planet.spaceImage;
     }
     else {
         STCSpaceObject * planet = [self.planets objectAtIndex:indexPath.row];
