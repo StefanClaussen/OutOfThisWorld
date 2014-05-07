@@ -68,12 +68,36 @@
             }
         }
     }
+    
+    if ([segue.destinationViewController isKindOfClass:[STCAddSpaceObjectViewController class]]) {
+        STCAddSpaceObjectViewController *addSpaceObjectVC = segue.destinationViewController;
+        addSpaceObjectVC.delegate = self;
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - STCAddSpaceObjectViewController Delegate
+
+- (void)didCancel
+{
+    NSLog(@"didCancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addSpaceObject:(STCSpaceObject *)spaceObject
+{
+    if (!self.addedSpaceObjects) {
+        self.addedSpaceObjects = [[NSMutableArray alloc]init];
+    }
+    [self.addedSpaceObjects addObject:spaceObject];
+    
+    NSLog(@"addSpaceObject");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

@@ -1,14 +1,22 @@
 //
 //  STCAddSpaceObjectViewController.h
 //  Out of this World
-//
-//  Created by Stefan Claussen on 06/05/2014.
-//  Copyright (c) 2014 One foot after the other. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
+#import "STCSpaceObject.h"
+
+@protocol STCAddSpaceObjectViewControllerDelegate <NSObject>
+
+@required
+
+-(void)addSpaceObject:(STCSpaceObject *)spaceObject;
+-(void)didCancel;
+
+@end
 
 @interface STCAddSpaceObjectViewController : UIViewController
+
+@property (weak, nonatomic) id <STCAddSpaceObjectViewControllerDelegate>delegate;
 
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *nicknameTextField;
