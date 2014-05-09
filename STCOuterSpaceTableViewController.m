@@ -118,10 +118,22 @@
 {
     [self.addedSpaceObjects addObject:spaceObject];
     
-    NSLog(@"addSpaceObject");
+    // Will save to NSUserDefaults here
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [self.tableView reloadData];
+}
+
+#pragma mark - Helper methods
+
+- (NSDictionary *)spaceObjectsAsAPropertyList:(STCSpaceObject *)spaceObject
+{
+    NSData *imageData = UIImagePNGRepresentation(spaceObject.spaceImage);
+    
+    NSDictionary *dictionary = @{PLANET_NAME : spaceObject.name, PLANET_GRAVITY : @(spaceObject.gravitationalForce), PLANET_DIAMETER : @(spaceObject.diameter), PLANET_YEAR_LENGTH : @(spaceObject.yearLength), PLANET_DAY_LENGTH : @(spaceObject.dayLength), PLANET_TEMPERATURE : @(spaceObject.temperature), PLANET_NUMBER_OF_MOONS : @(spaceObject.numberOfMoons), PLANET_NICKNAME : spaceObject.nickname, PLANET_INTERESTING_FACT : spaceObject.interestFact, PLANET_IMAGE : imageData };
+    
+    return dictionary;
 }
 
 #pragma mark - Table view data source
