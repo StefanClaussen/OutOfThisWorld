@@ -13,8 +13,9 @@
 @end
 
 @implementation STCOuterSpaceTableViewController
+#define ADDED_SPACE_OBJECTS_KEY @"Added Space Objects Array"
 
-# pragma mark - Lazy Instantiation of Properties
+#pragma mark - Lazy Instantiation of Properties
 
 - (NSMutableArray *)planets
 {
@@ -50,6 +51,12 @@
         NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
         STCSpaceObject *planet = [[STCSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
         [self.planets addObject:planet];
+    }
+    
+    NSArray *myPlanetsAsPropertyLists = [[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_SPACE_OBJECTS_KEY];
+    for (NSDictionary *dictionary in myPlanetsAsPropertyLists) {
+        STCSpaceObject *spaceObject = [self spaceObjectForDictionary:dictionary];
+        [self.addedSpaceObjects addObject:spaceObject];
     }
 }
 
@@ -119,6 +126,12 @@
     [self.addedSpaceObjects addObject:spaceObject];
     
     // Will save to NSUserDefaults here
+    NSMutableArray *spaceObjectsAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_SPACE_OBJECTS_KEY] mutableCopy];
+    if (!spaceObjectsAsPropertyLists) spaceObjectsAsPropertyLists = [[NSMutableArray alloc] init];
+    
+    [spaceObjectsAsPropertyLists addObject:[self spaceObjectsAsAPropertyList:spaceObject]];
+    [[NSUserDefaults standardUserDefaults] setObject: spaceObjectsAsPropertyLists forKey:ADDED_SPACE_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -134,6 +147,14 @@
     NSDictionary *dictionary = @{PLANET_NAME : spaceObject.name, PLANET_GRAVITY : @(spaceObject.gravitationalForce), PLANET_DIAMETER : @(spaceObject.diameter), PLANET_YEAR_LENGTH : @(spaceObject.yearLength), PLANET_DAY_LENGTH : @(spaceObject.dayLength), PLANET_TEMPERATURE : @(spaceObject.temperature), PLANET_NUMBER_OF_MOONS : @(spaceObject.numberOfMoons), PLANET_NICKNAME : spaceObject.nickname, PLANET_INTERESTING_FACT : spaceObject.interestFact, PLANET_IMAGE : imageData };
     
     return dictionary;
+}
+
+- (STCSpaceObject *)spaceObjectForDictionary:(NSDictionary *)dictionary
+{
+    NSData *dataForImage = dictionary[PLANET_IMAGE];
+    UIImage *spaceObjectImage = [UIImage imageWithData:dataForImage];
+    STCSpaceObject *spaceObject = [[STCSpaceObject alloc] initWithData:dictionary andImage:spaceObjectImage];
+    return spaceObject;
 }
 
 #pragma mark - Table view data source
